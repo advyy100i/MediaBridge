@@ -68,8 +68,6 @@ A secure media management backend with user auth, media metadata management, str
 
 https://github.com/user-attachments/assets/87a9d3c6-ad81-4dbd-bdac-a803b4902c55
 
-
-<img width="493" height="288" alt="Screenshot 2025-08-12 163914" src="https://github.com/user-attachments/assets/1f1f4d00-d752-47e1-81b7-6735adfa4226" />
 <img width="388" height="112" alt="Screenshot 2025-08-12 163924" src="https://github.com/user-attachments/assets/d172e2f2-17be-4c76-9033-94c2664fc645" />
 <img width="784" height="406" alt="Screenshot 2025-08-13 005810" src="https://github.com/user-attachments/assets/f6898779-e1ca-41eb-a061-929a785b6f22" />
 
