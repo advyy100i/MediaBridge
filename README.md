@@ -87,7 +87,3 @@ Use the JWT token received from login to authorize requests to protected endpoin
 Authorization: Bearer <your_token_here>
 ```
 
----
-![Result:](https://github.com/user-attachments/assets/ba510096-e67a-4af8-b71a-4f861cd15e5f)
-
-
