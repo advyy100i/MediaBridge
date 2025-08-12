@@ -1,6 +1,4 @@
-Here’s a clean, professional README.md for your media platform backend project:
 
-````markdown
 # Media Platform Backend
 
 A secure backend API built with Node.js, Express, and MongoDB for managing media assets.  
