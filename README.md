@@ -88,9 +88,6 @@ Authorization: Bearer <your_token_here>
 ```
 
 ---
-
----
-https://github.com/user-attachments/assets/ba510096-e67a-4af8-b71a-4f861cd15e5f
-
+![Result:](https://github.com/user-attachments/assets/ba510096-e67a-4af8-b71a-4f861cd15e5f)
 
 
