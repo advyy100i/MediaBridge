@@ -1,8 +1,34 @@
-**Features:**
+# Media Platform Backend
 
-1.Admin signup and login with hashed passwords and JWT authentication
-2.Media asset metadata management with file uploads
-3.Protected routes accessible only to authenticated admins
-4.Secure 10-minute streaming URLs with token validation
-5.Media view logging with viewer IP and timestamps
-6.Support for video/audio streaming with range requests
+A secure backend API built with Node.js, Express, and MongoDB for managing media assets.  
+Allows admin users to upload video and audio files, authenticate with JWT, and generate time-limited secure streaming links.
+
+---
+
+## Features
+
+- Admin user signup and login with hashed passwords and JWT authentication  
+- Upload and manage media metadata (title, type, file)  
+- Protected routes accessible only to authenticated admins  
+- Generate secure 10-minute streaming URLs with token validation  
+- Media view logging (viewer IP and timestamp)  
+- Supports video/audio streaming with HTTP range requests
+
+---
+
+## Tech Stack
+
+- Node.js  
+- Express  
+- MongoDB & Mongoose  
+- JSON Web Tokens (JWT)  
+- Multer (for file uploads)
+
+---
+
+## Setup & Run
+
+1. Clone the repo  
+   ```bash
+   git clone https://github.com/advyy100i/media_platform_backend.git
+   cd media_platform_backend
