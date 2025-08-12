@@ -2,9 +2,10 @@
 # Media Access & Analytics Platform Backend
 
 A secure media management backend with user auth, media metadata management, streaming URLs, view logging, analytics with caching, and rate limiting.
- *Users can upload media and generate secure streaming links.
- *Tracks who is watching your media, when, and from where. 
- *Adds performance, security, and production-readiness features to stand out.
+
+ **Users can upload media and generate secure streaming links.
+ **Tracks who is watching your media, when, and from where. 
+ **Adds performance, security, and production-readiness features to stand out.
  
 ---
 
