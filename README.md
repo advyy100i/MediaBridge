@@ -1,89 +1,70 @@
+Sure! Here’s a concise, clear, and still professional README for your project:
 
+````markdown
 # Media Platform Backend
 
-A secure backend API built with Node.js, Express, and MongoDB for managing media assets.  
-Allows admin users to upload video and audio files, authenticate with JWT, and generate time-limited secure streaming links.
+![Architecture](https://github.com/user-attachments/assets/ba510096-e67a-4af8-b71a-4f861cd15e5f)
+
+Node.js & Express backend with MongoDB for secure media management and streaming.  
+Admins can upload media, authenticate with JWT, and generate 10-minute secure streaming links.
 
 ---
 
 ## Features
 
-- Admin user signup and login with hashed passwords and JWT authentication  
-- Upload and manage media metadata (title, type, file)  
-- Protected routes accessible only to authenticated admins  
-- Generate secure 10-minute streaming URLs with token validation  
-- Media view logging (viewer IP and timestamp)  
-- Supports video/audio streaming with HTTP range requests
+- Admin signup/login with JWT  
+- Upload/manage video/audio media  
+- Generate secure, expiring streaming URLs  
+- Media view logging (IP & timestamp)  
+- Supports HTTP range requests for smooth playback
 
 ---
 
-## Tech Stack
+## Setup
 
-- Node.js  
-- Express  
-- MongoDB & Mongoose  
-- JSON Web Tokens (JWT)  
-- Multer (for file uploads)
-
----
-
-## Setup & Run
-
-1. Clone the repo  
-   ```bash
-   git clone https://github.com/advyy100i/media_platform_backend.git
-   cd media_platform_backend
+```bash
+git clone https://github.com/advyy100i/media_platform_backend.git
+cd media_platform_backend
+npm install
 ````
 
-2. Install dependencies
+Create `.env` with:
 
-   ```bash
-   npm install
-   ```
+```
+PORT=4000
+MONGO_URI=mongodb://localhost/media-platform
+JWT_SECRET=your_jwt_secret
+STREAM_TOKEN_SECRET=your_stream_token_secret
+STREAM_TOKEN_EXP_SECONDS=600
+UPLOAD_DIR=uploads
+```
 
-3. Create a `.env` file in the root with the following variables:
+Start server:
 
-   ```env
-   PORT=4000
-   MONGO_URI=mongodb://localhost/media-platform
-   JWT_SECRET=your_jwt_secret
-   STREAM_TOKEN_SECRET=your_stream_token_secret
-   STREAM_TOKEN_EXP_SECONDS=600
-   UPLOAD_DIR=uploads
-   ```
-
-4. Start the server
-
-   ```bash
-   npm start
-   ```
+```bash
+npm start
+```
 
 ---
 
 ## API Endpoints
 
-* `POST /auth/signup`
-  Register a new admin user.
+* `POST /auth/signup` — Register admin
+* `POST /auth/login` — Login and get JWT
+* `POST /media` — Upload media (auth required)
+* `GET /media/:id/stream-url` — Get secure stream URL (auth required)
+* `GET /media/:id/stream?token=...` — Stream media using token
 
-* `POST /auth/login`
-  Login admin user and get JWT token.
-
-* `POST /media` (protected)
-  Upload media metadata and file.
-
-* `GET /media/:id/stream-url` (protected)
-  Get a secure streaming URL valid for 10 minutes.
-
-* `GET /media/:id/stream?token=...`
-  Stream media using the secure token.
+Use the JWT token in `Authorization: Bearer <token>` header for protected routes.
 
 ---
 
-## Usage
 
-Use the JWT token received from login to authorize requests to protected endpoints by setting the header:
+
+https://github.com/user-attachments/assets/5cab0cc4-4367-4038-9f05-7ca46efad0ac
+
 
 ```
-Authorization: Bearer <your_token_here>
-```
 
+
+```
