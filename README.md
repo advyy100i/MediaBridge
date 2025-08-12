@@ -1,5 +1,5 @@
 
-# Media Backend API
+# Media Access & Analytics Platform Backend
 
 A secure media management backend with user auth, media metadata management, streaming URLs, view logging, analytics with caching, and rate limiting.
 
