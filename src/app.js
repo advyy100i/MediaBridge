@@ -1,25 +1,34 @@
+if (process.env.NODE_ENV === 'test') {
+  require('dotenv').config({ path: '.env.test' });
+} else {
+  require('dotenv').config();
+}
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
-const path = require('path');
+const cors = require('cors');
 
 const authRoutes = require('./routes/auth');
 const mediaRoutes = require('./routes/media');
 
 const app = express();
+
+// Middlewares
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// static serving for uploaded files (only for development; in prod you typically let a CDN/S3 handle this)
+// Serve uploads for development
+const path = require('path');
 app.use('/uploads', express.static(path.join(process.cwd(), process.env.UPLOAD_DIR || 'uploads')));
 
-// routes
+// Routes
 app.use('/auth', authRoutes);
 app.use('/media', mediaRoutes);
 
-const PORT = process.env.PORT || 4000;
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => {
-    app.listen(PORT, () => console.log(`Server on ${PORT}`));
-  })
-  .catch(err => { console.error('mongo err', err); process.exit(1); });
+// Connect to MongoDB (no deprecated options)
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => console.error('MongoDB connection error:', err));
+
+module.exports = app;

@@ -1,0 +1,39 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    ports:
+      - "4000:4000"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/media-db
+      - PORT=4000
+      - JWT_SECRET=jwt_secret_123
+      - STREAM_TOKEN_SECRET=stream_secret_123
+      - STREAM_TOKEN_EXP_SECONDS=600
+      - UPLOAD_DIR=uploads
+      - AUTH_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OWFmZTZlYzA2NWE1Y2EzMWUyZTU5OCIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20iLCJpYXQiOjE3NTQ5ODgzMjQsImV4cCI6MTc1NTA3NDcyNH0.QIyDdFllwH-kYDG3EZKIGFOTGtl4DQDZQWsDarwTpEE
+      - NEXT_PUBLIC_STREAM_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OWFmZTZlYzA2NWE1Y2EzMWUyZTU5OCIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20iLCJpYXQiOjE3NTQ5ODk3MDUsImV4cCI6MTc1NTA3NjEwNX0.52qTfo_uOiGbpkEJ4JUPOKBLfnBvsmqnyNN17WCg1uw
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - mongo
+      - redis
+    volumes:
+      - ./uploads:/app/uploads
+
+  mongo:
+    image: mongo:6.0
+    restart: always
+    volumes:
+      - mongo-data:/data/db
+    ports:
+      - "27018:27017"   # <-- change host port to 27018
+
+
+  redis:
+    image: redis:7-alpine
+    restart: always
+    ports:
+      - "6379:6379"
+
+volumes:
+  mongo-data:
