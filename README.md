@@ -5,7 +5,7 @@ A secure media management backend with user auth, media metadata management, str
 ##
 * Users can upload media and generate secure streaming links.
 * Tracks who is watching your media, when, and from where. 
-* Adds performance, security, and production-readiness features to stand out.
+* Adds performance, security, and production-readiness features.
  
 ---
 
