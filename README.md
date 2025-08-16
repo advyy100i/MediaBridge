@@ -16,7 +16,7 @@ A secure media management backend with user auth, media metadata management, str
 * **View Logging** (IP + timestamp)
 * **Analytics** with Redis caching
 * **Rate Limiting** on view logging endpoint
-* **Automated Tests** (Jest/PyTest/JUnit)
+* **Automated Tests** (Jest)
 * **Dockerized** for easy deployment
 * **Config via `.env`**
 
